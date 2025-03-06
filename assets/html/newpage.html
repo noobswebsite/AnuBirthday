@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Celebration Time! 🎉</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.card {
+    background: transparent;
+    backdrop-filter: blur(1px); 
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+   
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: purple;
+}
+
+button {
+    background: linear-gradient(45deg, #ff4d79, #ff1493);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff1493, #ff4d79);
+    transform: scale(1.1);
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🎉 Happy Birthday! 🎉</h1>
+            <p>My Dear💖 Bestie!<br> I hope all your birthday🎂 wishes<br> and dreams come true🥰. Many more happy returns of the day✨</p>
+            <button herf="#">Let's Go! ✨</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to launch confetti lower on the screen
+        function startConfetti() {
+            const duration = 3 * 1000; // 3 seconds
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 7,
+                    spread: 120,
+                    origin: { y: 0.7 } // Lower confetti to 90% of the screen height
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        // Auto-start confetti on page load
+        window.onload = startConfetti;
+    </script>
+</body>
+</html>
