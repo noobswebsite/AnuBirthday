@@ -8,12 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
         .ifEnded(() => {
             // Redirect to another page when countdown ends
             window.location.href = "assets/html/newpage.html"; // Change this to your target page
-        });
-     // Force Flipdown Width Change After Initialization
-    setTimeout(() => {
-        const flipdown = document.querySelector(".flipdown");
-        flipdown.style.width = "600px"; // Fixed width
-        flipdown.style.height = "110px"; // Adjust height if necessary
-        flipdown.style.overflow = "visible"; // Fix overflow
-    }, 100); // Wait until Flipdown renders
+     
 });
